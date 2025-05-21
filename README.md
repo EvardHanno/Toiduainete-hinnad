@@ -3,7 +3,7 @@
 Meie perele meeldib süüa lõhet ja forelli, kuid nende hinnad kõiguvad oluliselt ning võivad olla üllatavalt kõrged. 
 Sellest tekkis küsimus: **kus poes ja mis kategoorias leidub kõige odavamaid tooteid**?
 
-Sellele vastuse leidmiseks töötasin välja R-põhise veebikammimisprogrammi, mis kogub erinevate e-poodide andmeid ja võimaldab teha hindade analüüsi. Selles projektis tehti pärast andmete kogumist hindade analüüs Excelis.
+Sellele vastuse leidmiseks töötasin välja R-põhise veebikammimisprogrammi, mis kogub erinevate e-poodide andmeid ja võimaldab teha hindade analüüsi. Pärast andmete kogumist analüüsiti hindu Excelis.
 
 ## Projekti sisu
 
@@ -11,7 +11,7 @@ Veebikammimise programm võimaldab:
 - Sisestada programmi otsingusõna (nt *lõhe*)
 - Otsingusõna järgi tehakse e-poodidest otsing
 - Otsingust leitud toodete kohta võetakse nimetused ja hinnad
-- Leitud tulemused salvestatakse CSV faili nimega nimega `otsingusõna_kuupäev.csv`, näiteks `lõhe_2025-05-18.csv`.
+- Leitud tulemused salvestatakse CSV faili nimega `otsingusõna_kuupäev.csv`, näiteks `lõhe_2025-05-18.csv`.
 
 Kogutud andmed analüüsitakse Excelis (`hinnaanalüüs.xlsx`).
 
@@ -22,11 +22,11 @@ Veebikammimine on tehtud R-is, kasutades:
 - `ChromeDriver` (chromedriver-win64)
 - Chrome brauserit
 
-Analüüs tehti Excelis, kasutades:
-- Power Query't andmete Excelisse laadimiseks ning tabelite kombineerimiseks
-- Data Validation tööriista andmete kodeerimiseks
-- VLOOKUP funktsiooni andmetele koodide andmiseks
-- Pivor Table ja Pivot Chart tööriistu, et analüüsida ja visualiseerida andmeid
+Analüüs viidi läbi Excelis, kasutades järgmisi tööriistu::
+- _Power Query_'t andmete Excelisse laadimiseks ning tabelite kombineerimiseks
+- _Data Validation_ tööriista andmete kodeerimiseks
+- _VLOOKUP_ funktsiooni andmetele koodide andmiseks
+- _Pivor Table_ ja _Pivot Chart_ tööriistu, et analüüsida ja visualiseerida andmeid
 
 ### CSV faili veerud:
 
@@ -62,8 +62,8 @@ Selle analüüsi jaoks koguti andmeid 01.05 kuni 16.05.2025.
 
 ## Litsents
 
-Projekt on avalikuks kasutamiseks (MIT litsents). Tunne huvi, jaga ja kohanda vastavalt oma vajadustele!
+Projekt on avalikuks kasutamiseks (MIT litsents). Jaga ja kohanda vastavalt oma vajadustele!
 
 ---
 
-*See projekt sündis praktilisest vajadusest, aga võib olla kasulik ka teistele, kes soovivad mõista e-poe hinnastruktuure ja valida nutikamalt, kust oma toidukraam osta.*
+*See projekt sündis praktilisest vajadusest, aga võib olla kasulik ka teistele, kes soovivad võrrelda hindasid e-poodides ja valida nutikamalt, kust oma toidukraam osta.*
