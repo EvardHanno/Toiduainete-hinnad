@@ -1079,3 +1079,5 @@ write.csv(df_tulemus, paste0(here(), "/andmed/", otsingusõna, "_", Sys.Date(), 
 
 
 
+
+
