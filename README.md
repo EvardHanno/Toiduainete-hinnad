@@ -45,13 +45,12 @@ Andmeid kogutakse järgmistest poodidest:
 - Bolt Market Soola (Tartu)
 - Wolt Market Karlova (Tartu)
 
-Selle analüüsi jaoks koguti andmeid 01.05 kuni 16.05.2025.
+Selle analüüsi jaoks koguti andmeid 01.05 kuni 16.05.2025 (andmed asuvad kasutas `/andmed`).
 
 ## Peamised järeldused
 
-- **Soovitatav osta:** värske lõhe ja kuumsuitsulõhe
-- **Parimad hinnad:** Barbora ja Rimi
-- Nendes poodides on kõige madalamad hinnad võrreldes teistega nende kategooriate lõikes
+- **Parim tootegatekooria:** värske lõhe ja kuumsuitsulõhe, kuna nende toodete hinna ja kvaliteedi suhe on parim
+- **Parimad poed:** Barbora ja Rimi - nendes poodides olid antud kategooria tooted kõige soodsama hinnaga võrreldes teiste e-poodidega
 
 ## Kuidas kasutada
 
@@ -62,7 +61,7 @@ Selle analüüsi jaoks koguti andmeid 01.05 kuni 16.05.2025.
 
 ## Litsents
 
-Projekt on avalikuks kasutamiseks (MIT litsents). Jaga ja kohanda vastavalt oma vajadustele!
+Projekt on avalikuks kasutamiseks (MIT litsents, vt. faili `LISENCE`). Jaga ja kohanda vastavalt oma vajadustele!
 
 ---
 
