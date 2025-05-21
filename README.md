@@ -1,35 +1,69 @@
-# Toiduainete hindade kammimine e-poodidest ja hindade analüüs
+# Toiduainete hindade veebikammimine ja analüüs
 
-Meie perele meeldib süüa lõhet ja forelli. Aga nende hinnad kõiguvad oluliselt ning võivad olla väga kallid. 
-Seega on küsimus - mis tooteid osta? ja mis poest neid tasub osta?
+Meie perele meeldib süüa lõhet ja forelli, kuid nende hinnad kõiguvad oluliselt ning võivad olla üllatavalt kõrged. 
+Sellest tekkis küsimus: **kus poes ja mis kategoorias leidub kõige odavamaid tooteid**?
 
-Kasutamine veebikammimise programmi, mis käib läbi e-poed, ja kammib kokku toitude hinnad. Programmi saab sisestada otsingusõna, mille järgi otsitakse kõik tooted nendes e-poodides ja pannakse tabelisse. Otsingu teostamiseks sisestatakse otsingusõna e-poe oma otsingusse ning saadud tulemused kammitakse.
+Sellele vastuse leidmiseks töötasin välja R-põhise veebikammimisprogrammi, mis kogub erinevate e-poodide andmeid ja võimaldab teha hindade analüüsi. Selles projektis tehti pärast andmete kogumist hindade analüüs Excelis.
 
-Programm kasutab RSelenium paketti (selenium-server-standalone-3.5.3), ChromeDriverit (chromedriver-win64) ja Chrome brauserit.
+## Projekti sisu
 
-Tulemused pannakse kasuda andmed faili nimega [otsingusõna]_[kuupäev].CSV
+Veebikammimise programm võimaldab:
+- Sisestada programmi otsingusõna (nt *lõhe*)
+- Otsingusõna järgi tehakse e-poodidest otsing
+- Otsingust leitud toodete kohta võetakse nimetused ja hinnad
+- Leitud tulemused salvestatakse CSV faili nimega nimega `otsingusõna_kuupäev.csv`, näiteks `lõhe_2025-05-18.csv`.
 
-Tulemuseks saab tabeli järgnevate veergudega: 
-* Pood
-* Tootenimi
-* Hind,€
-* Hind,€/kg
-* Kliendikaardiga,€
+Kogutud andmed analüüsitakse Excelis (`hinnaanalüüs.xlsx`).
 
-NB! Hind,€/kg antud väärtust ei pruugi olla €/kg vaid ka näiteks €/L või €/tk, olenevalt tootest.
+## Tehnoloogia
 
-Poed, kust kammitakse: 
-* Prisma e-pood
-* Rimi e-pood
-* Selveri e-pood
-* Barbora (Maxima e-pood)
-* Bolt Market Soola (Tartu)
-* Wolt Market Karlova (Tartu)
+Veebikammimine on tehtud R-is, kasutades:
+- `RSelenium` (selenium-server-standalone-3.5.3)
+- `ChromeDriver` (chromedriver-win64)
+- Chrome brauserit
 
-Pärast kammimist analüüsitakse saadud tulemusi Excelis, failis hinnaanalüüs.XLSX
+Analüüs tehti Excelis, kasutades:
+- Power Query't andmete Excelisse laadimiseks ning tabelite kombineerimiseks
+- Data Validation tööriista andmete kodeerimiseks
+- VLOOKUP funktsiooni andmetele koodide andmiseks
+- Pivor Table ja Pivot Chart tööriistu, et analüüsida ja visualiseerida andmeid
 
-## Tulemus lühidalt:
+### CSV faili veerud:
 
-Tasub osta värsket lõhe või kuumsuitsutatud lõhe. Nende toodete hind ja kvaliteet tunduvad kõige paremad olevat.
-Neid tooteid tasub vaadata Barborast ja Rimist, sest neil on madalaimad hinnad nendes kategooriates.
+- `Pood`
+- `Tootenimi`
+- `Hind (€)`
+- `Hind (€/kg)` *(NB! olenevalt tootest võib €/kg kohta tähendada näiteks €/L või €/tk)*
 
+## Kammimise allikad
+
+Andmeid kogutakse järgmistest poodidest:
+- Prisma e-pood
+- Rimi e-pood
+- Selveri e-pood
+- Barbora (Maxima e-pood)
+- Bolt Market Soola (Tartu)
+- Wolt Market Karlova (Tartu)
+
+Selle analüüsi jaoks koguti andmeid 01.05 kuni 16.05.2025.
+
+## Peamised järeldused
+
+- **Soovitatav osta:** värske lõhe ja kuumsuitsulõhe
+- **Parimad hinnad:** Barbora ja Rimi
+- Nendes poodides on kõige madalamad hinnad võrreldes teistega nende kategooriate lõikes
+
+## Kuidas kasutada
+
+1. Installi vajalikud paketid ja Selenium server
+2. Käivita veebikammimisprogramm R-is
+3. Sisesta otsingusõna
+4. Vaata väljundfaili ja tee analüüs
+
+## Litsents
+
+Projekt on avalikuks kasutamiseks (MIT litsents). Tunne huvi, jaga ja kohanda vastavalt oma vajadustele!
+
+---
+
+*See projekt sündis praktilisest vajadusest, aga võib olla kasulik ka teistele, kes soovivad mõista e-poe hinnastruktuure ja valida nutikamalt, kust oma toidukraam osta.*
