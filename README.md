@@ -61,7 +61,7 @@ Selle analüüsi jaoks koguti andmeid 01.05 kuni 16.05.2025 (andmed asuvad kasut
 
 ## Litsents
 
-Projekt on avalikuks kasutamiseks (MIT litsents, vt. faili `LISENCE`). Jaga ja kohanda vastavalt oma vajadustele!
+Projekt on avalikuks kasutamiseks (MIT litsents, vt. faili `LICENSE`). Jaga ja kohanda vastavalt oma vajadustele!
 
 ---
 
